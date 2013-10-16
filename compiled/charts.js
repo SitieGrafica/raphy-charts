@@ -1571,7 +1571,8 @@ CircleProgressOptions = (function(_super) {
     fill_color: "#fff",
     stroke_color: "#81ae14",
     background_color: "#222222",
-    text_shadow: false
+    text_shadow: false,
+    text_value: ""
   };
 
   function CircleProgressOptions(options) {
@@ -1610,6 +1611,7 @@ CircleProgress = (function(_super) {
       "stroke-width": 0
     });
     percent = Math.round(this.value * 100 / 100) + "%";
+    if (this.options.text_value != "") {percent = this.options.text_value}
     this.r.text(this.center_point.x, this.center_point.y, percent).attr({
       'font-size': this.options.radius / 2.5,
       'fill': this.options.font_color,
