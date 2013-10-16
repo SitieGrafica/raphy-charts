@@ -1572,7 +1572,8 @@ CircleProgressOptions = (function(_super) {
     stroke_color: "#81ae14",
     background_color: "#222222",
     text_shadow: false,
-    text_value: ""
+    text_value: "",
+    font_family: "Arial"
   };
 
   function CircleProgressOptions(options) {
@@ -1615,11 +1616,13 @@ CircleProgress = (function(_super) {
     this.r.text(this.center_point.x, this.center_point.y, percent).attr({
       'font-size': this.options.radius / 2.5,
       'fill': this.options.font_color,
+      'font-family': this.options.font_family,
       'font-weight': 'bold'
     });
     label = this.r.text(this.center_point.x, this.center_point.y + 1.8 * this.options.radius, this.label).attr({
       'font-size': this.options.radius / 2.5,
       'font-weight': 'bold',
+      'font-family': this.options.font_family,
       'fill': this.options.label_color
     });
     if (this.options.text_shadow) {
